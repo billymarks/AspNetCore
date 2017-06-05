@@ -56,9 +56,12 @@ namespace MobileStore
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    name: "default", //Маршрут с именем 
+                    template: "{controller=Home}/{action=Index}/{id?}"); //Запрос направляем к контроллеру хоум метод индекс
             });
+
+            //вызываем инициализатор
+            SampleData.Initialize(app.ApplicationServices);
         }
     }
 }
